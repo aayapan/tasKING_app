@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, deprecated_member_use, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, deprecated_member_use
 
 import 'package:flutter/material.dart';
 
@@ -13,14 +13,19 @@ Widget _buildEmailInput() {
   return Column(
     children: [
       Container(
-        width: 290.0,
-        alignment: Alignment.centerLeft,
-        child: Text(
-          "Email",
-          style: TextStyle(
-            fontFamily: 'Inter-SemiBold',
-            fontSize: 14.0,
-            color: Colors.white,
+        alignment: Alignment.center,
+        width: double.infinity,
+        child: Container(
+          width: 290.0,
+          // padding: EdgeInsets.only(left: 55),
+          alignment: Alignment.centerLeft,
+          child: Text(
+            "Email",
+            style: TextStyle(
+              fontFamily: 'Inter-SemiBold',
+              fontSize: 14.0,
+              color: Colors.white,
+            ),
           ),
         ),
       ),
@@ -62,14 +67,19 @@ Widget _buildPasswordInput() {
   return Column(
     children: [
       Container(
-        width: 290.0,
-        alignment: Alignment.centerLeft,
-        child: Text(
-          "Password",
-          style: TextStyle(
-            fontFamily: 'Inter-SemiBold',
-            fontSize: 14.0,
-            color: Colors.white,
+        alignment: Alignment.center,
+        width: double.infinity,
+        child: Container(
+          width: 290.0,
+          // padding: EdgeInsets.only(left: 55),
+          alignment: Alignment.centerLeft,
+          child: Text(
+            "Password",
+            style: TextStyle(
+              fontFamily: 'Inter-SemiBold',
+              fontSize: 14.0,
+              color: Colors.white,
+            ),
           ),
         ),
       ),
@@ -89,7 +99,7 @@ Widget _buildPasswordInput() {
           ),
           decoration: InputDecoration(
             prefixIcon: Icon(
-              Icons.mail,
+              Icons.key,
               size: 14.0,
               color: Colors.white,
             ),
@@ -108,25 +118,26 @@ Widget _buildPasswordInput() {
   );
 }
 
-Widget _buildForgotPasswordBtn() {
+Widget _buildForgotPasswordBtn(){
   return Container(
-    width: 290.0,
-    alignment: Alignment.centerRight,
-    child: FlatButton(
-      padding: EdgeInsets.only(right: 0),
-      onPressed: () {
-        print("Forgot Password!");
-      },
-      child: Text(
-        "Forgot Password?",
-        style: TextStyle(
-          fontFamily: 'Inter-Bold',
-          color: Colors.white,
-          fontSize: 14.0,
-        ),
-      ),
-    ),
-  );
+            width: 290.0,
+            alignment: Alignment.centerRight,
+            child: FlatButton(
+              // color: Colors.amber,
+              padding: EdgeInsets.only(right: 0),
+              onPressed: () {
+                print("Forgot Password!");  
+              },
+              child: Text(
+                "Forgot Password?",
+                style: TextStyle(
+                  fontFamily: 'Inter-Bold',
+                  color: Colors.white,
+                  fontSize: 14.0,
+                ),
+              ),
+            ),
+          );
 }
 
 class _SignInState extends State<SignIn> {
@@ -134,36 +145,32 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF3D716D),
-      body: Container(
-        width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 73.0,
+      body: Column(
+        children: [
+          SizedBox(
+            height: 73,
+          ),
+          Text(
+            "Sign In",
+            style: TextStyle(
+              fontFamily: 'Inter-Bold',
+              fontSize: 40.0,
+              color: Colors.white,
             ),
-            Text(
-              "Sign In",
-              style: TextStyle(
-                fontFamily: 'Inter-Bold',
-                fontSize: 40.0,
-                color: Colors.white,
-              ),
-            ),
-            SizedBox(
-              height: 42.0,
-            ),
-            _buildEmailInput(),
-            SizedBox(
-              height: 23.0,
-            ),
-            _buildPasswordInput(),
-            SizedBox(
-              height: 23.0,
-            ),
-            _buildForgotPasswordBtn(),
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 42.0,
+          ),
+          _buildEmailInput(),
+          SizedBox(
+            height: 23.0,
+          ),
+          _buildPasswordInput(),
+          SizedBox(
+            height: 23.0,
+          ),
+          _buildForgotPasswordBtn(),
+        ],
       ),
     );
   }
