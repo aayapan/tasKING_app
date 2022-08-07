@@ -39,9 +39,9 @@ Widget _buildEmailInput() {
           ),
           decoration: InputDecoration(
             prefixIcon: Icon(
-              Icons.mail,
-              size: 14.0,
-              color: Colors.white,
+              Icons.email_outlined,
+              size: 16,
+              color: Color(0xFFFFE7E7E7),
             ),
             border: InputBorder.none,
             hintText: "Enter your Email",
@@ -89,9 +89,9 @@ Widget _buildPasswordInput() {
           ),
           decoration: InputDecoration(
             prefixIcon: Icon(
-              Icons.mail,
-              size: 14.0,
-              color: Colors.white,
+              Icons.key_outlined,
+              size: 16,
+              color: Color(0xFFFFE7E7E7),
             ),
             border: InputBorder.none,
             hintText: "********",
