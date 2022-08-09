@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, deprecated_member_use, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, deprecated_member_use, sized_box_for_whitespace, avoid_print
 
 import 'package:flutter/material.dart';
 
@@ -131,9 +131,7 @@ Widget _buildForgotPasswordBtn() {
   );
 }
 
-
 class _SignInState extends State<SignIn> {
-
   bool rememberMeValue = false;
 
   @override
@@ -207,9 +205,8 @@ class _SignInState extends State<SignIn> {
               color: Colors.white,
               minWidth: 290,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20)
-              ),
-              onPressed: () {  },
+                  borderRadius: BorderRadius.circular(20)),
+              onPressed: () {},
               child: Text(
                 "LOGIN",
               ),
@@ -224,7 +221,86 @@ class _SignInState extends State<SignIn> {
                 color: Colors.white,
               ),
             ),
-            
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Sign in with",
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w300,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: EdgeInsets.only(left: 50, right: 50),
+              width: 290,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  CircleAvatar(
+                    radius: 25,
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      color: Color(0xFF3D716D),
+                      padding: EdgeInsets.zero,
+                      onPressed: () {},
+                      icon: ImageIcon(
+                        AssetImage("assets/images/Facebook_128px.png"),
+                      ),
+                      iconSize: 43,
+                    ),
+                  ),
+                  CircleAvatar(
+                    radius: 25,
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      color: Color(0xFF3D716D),
+                      padding:
+                          EdgeInsets.only(top: 1, left: 2, right: 0, bottom: 0),
+                      onPressed: () {},
+                      icon: ImageIcon(
+                        AssetImage("assets/images/google_128px.png"),
+                      ),
+                      iconSize: 43,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.bottomCenter,
+                padding: EdgeInsets.only(bottom: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Don't have an account? ",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w300,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        print("SIGN UP CLICKED");
+                      },
+                      child: Text(
+                        "Sign up",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
