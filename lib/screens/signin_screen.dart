@@ -110,6 +110,8 @@ Widget _buildPasswordInput() {
 
 Widget _buildForgotPasswordBtn() {
   return Container(
+    // color: Colors.redAccent,
+    height: 20,
     width: 290.0,
     alignment: Alignment.centerRight,
     child: FlatButton(
@@ -129,10 +131,15 @@ Widget _buildForgotPasswordBtn() {
   );
 }
 
+
 class _SignInState extends State<SignIn> {
+
+  bool rememberMeValue = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFF3D716D),
       body: Container(
         width: double.infinity,
@@ -162,6 +169,62 @@ class _SignInState extends State<SignIn> {
               height: 23.0,
             ),
             _buildForgotPasswordBtn(),
+            Container(
+              height: 20,
+              margin: EdgeInsets.only(top: 10),
+              width: 318.5,
+              child: Row(
+                children: [
+                  Checkbox(
+                    side: BorderSide(
+                      color: Colors.white,
+                      width: 1,
+                    ),
+                    checkColor: Colors.amber,
+                    activeColor: Color(0xFF3D716D),
+                    value: rememberMeValue,
+                    onChanged: (value) {
+                      setState(() {
+                        rememberMeValue = value!;
+                      });
+                    },
+                  ),
+                  Text(
+                    "Remember me",
+                    style: TextStyle(
+                      fontFamily: 'Inter-Regular',
+                      fontSize: 12.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            FlatButton(
+              color: Colors.white,
+              minWidth: 290,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20)
+              ),
+              onPressed: () {  },
+              child: Text(
+                "LOGIN",
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              width: 290,
+              child: Divider(
+                thickness: 1.5,
+                color: Colors.white,
+              ),
+            ),
+            
           ],
         ),
       ),
