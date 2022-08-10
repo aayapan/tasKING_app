@@ -131,6 +131,56 @@ Widget _buildForgotPasswordBtn() {
   );
 }
 
+Widget _buildLoginBtn() {
+  return FlatButton(
+    color: Colors.white,
+    minWidth: 290,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+    onPressed: () {},
+    child: Text(
+      "LOGIN",
+    ),
+  );
+}
+
+Widget _buildSocIcons() {
+  return Container(
+    padding: EdgeInsets.only(left: 50, right: 50),
+    width: 290,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        CircleAvatar(
+          radius: 25,
+          backgroundColor: Colors.white,
+          child: IconButton(
+            color: Color(0xFF3D716D),
+            padding: EdgeInsets.zero,
+            onPressed: () {},
+            icon: ImageIcon(
+              AssetImage("assets/images/Facebook_128px.png"),
+            ),
+            iconSize: 43,
+          ),
+        ),
+        CircleAvatar(
+          radius: 25,
+          backgroundColor: Colors.white,
+          child: IconButton(
+            color: Color(0xFF3D716D),
+            padding: EdgeInsets.only(top: 1, left: 2, right: 0, bottom: 0),
+            onPressed: () {},
+            icon: ImageIcon(
+              AssetImage("assets/images/google_128px.png"),
+            ),
+            iconSize: 43,
+          ),
+        )
+      ],
+    ),
+  );
+}
+
 class _SignInState extends State<SignIn> {
   bool rememberMeValue = false;
 
@@ -201,16 +251,7 @@ class _SignInState extends State<SignIn> {
             SizedBox(
               height: 20,
             ),
-            FlatButton(
-              color: Colors.white,
-              minWidth: 290,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)),
-              onPressed: () {},
-              child: Text(
-                "LOGIN",
-              ),
-            ),
+            _buildLoginBtn(),
             SizedBox(
               height: 20,
             ),
@@ -235,42 +276,7 @@ class _SignInState extends State<SignIn> {
             SizedBox(
               height: 20,
             ),
-            Container(
-              padding: EdgeInsets.only(left: 50, right: 50),
-              width: 290,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  CircleAvatar(
-                    radius: 25,
-                    backgroundColor: Colors.white,
-                    child: IconButton(
-                      color: Color(0xFF3D716D),
-                      padding: EdgeInsets.zero,
-                      onPressed: () {},
-                      icon: ImageIcon(
-                        AssetImage("assets/images/Facebook_128px.png"),
-                      ),
-                      iconSize: 43,
-                    ),
-                  ),
-                  CircleAvatar(
-                    radius: 25,
-                    backgroundColor: Colors.white,
-                    child: IconButton(
-                      color: Color(0xFF3D716D),
-                      padding:
-                          EdgeInsets.only(top: 1, left: 2, right: 0, bottom: 0),
-                      onPressed: () {},
-                      icon: ImageIcon(
-                        AssetImage("assets/images/google_128px.png"),
-                      ),
-                      iconSize: 43,
-                    ),
-                  )
-                ],
-              ),
-            ),
+            _buildSocIcons(),
             Expanded(
               child: Container(
                 alignment: Alignment.bottomCenter,
